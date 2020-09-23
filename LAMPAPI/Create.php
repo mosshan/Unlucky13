@@ -32,9 +32,9 @@
         }
         
         //Check if exact contact already exists
-        $sql =  "SELECT FirstName, LastName, ID FROM `Contacts` WHERE ( FirstName LIKE '%" . $contactFirst . "%'
-               AND LastName LIKE '%" . $contactLast . "%' AND Email LIKE '%" . $contactEmail . "%'
-               AND Phone LIKE '%" . $contactPhone . "%' AND UserID LIKE '%" . $userID . "%')";
+        $sql =  "SELECT FirstName, LastName, ID FROM `Contacts` WHERE ( FirstName LIKE '" . $contactFirst . "'
+               AND LastName LIKE '" . $contactLast . "' AND Email LIKE '" . $contactEmail . "'
+               AND Phone LIKE '" . $contactPhone . "' AND UserID = '" . $userID . "')";
         
         $result = $conn->query($sql);
 		$searchCount = $result->num_rows;
